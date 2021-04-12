@@ -52,9 +52,57 @@ class _PanicViewState extends State<PanicView> {
         width: Get.width,
         // width: MediaQuery.of(context).size.width,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Container(
+              color: Colors.green,
+              width: Get.width,
+              child: Text(
+                "Downloads",
+                style: TextStyle(
+                  fontSize: 30.0,
+                ),
+              ),
+            ),
+            Container(
+              height: 200.0,
+              color: Colors.blue[100],
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      color: Colors.blue,
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      color: Colors.red,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text("Teks"),
+                          SizedBox(
+                            height: 20.0,
+                          ),
+                          Card(
+                            color: Colors.blue,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                "Download",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
             InkWell(
               onTap: () {
                 if (color == Colors.red) {
