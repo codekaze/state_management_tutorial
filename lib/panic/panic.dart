@@ -42,6 +42,7 @@ class _PanicViewState extends State<PanicView> {
     //     ],
     //   ),
     // );
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.pink,
@@ -71,6 +72,24 @@ class _PanicViewState extends State<PanicView> {
                   Expanded(
                     child: Container(
                       color: Colors.blue,
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Text("Teks 1"),
+                              Spacer(),
+                              Text("Teks 2"),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Spacer(),
+                              Text("Teks 3"),
+                              Text("Teks 4"),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(
