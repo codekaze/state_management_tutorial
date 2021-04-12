@@ -22,12 +22,35 @@ class _PanicViewState extends State<PanicView> {
 
   @override
   Widget build(BuildContext context) {
+    // return Container(
+    //   color: Colors.white,
+    //   child: Column(
+    //     children: [
+    //       Container(
+    //         height: 80.0,
+    //         color: Colors.blue,
+    //       ),
+    //       Expanded(
+    //         child: Container(
+    //           color: Colors.yellow,
+    //         ),
+    //       ),
+    //       Container(
+    //         height: 80.0,
+    //         color: Colors.green,
+    //       ),
+    //     ],
+    //   ),
+    // );
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.pink,
         title: Text("Panic View"),
       ),
       body: Container(
+        color: Colors.yellow,
         width: Get.width,
+        // width: MediaQuery.of(context).size.width,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -38,6 +61,11 @@ class _PanicViewState extends State<PanicView> {
                   color = Colors.green;
                   label = "Please, wait!";
                   setState(() {});
+
+                  setState(() {
+                    color = Colors.green;
+                    label = "Please, wait!";
+                  });
                 } else if (color == Colors.green) {
                   color = Colors.red;
                   label = "Help";
@@ -55,6 +83,10 @@ class _PanicViewState extends State<PanicView> {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: Container(
+        height: 70.0,
+        color: Colors.green,
       ),
     );
   }
