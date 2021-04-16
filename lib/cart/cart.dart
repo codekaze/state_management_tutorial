@@ -7,6 +7,7 @@ class CartView extends StatefulWidget {
 
 class _CartViewState extends State<CartView> {
   List<Map> cartItems = [
+    //index 0
     {
       "product_name": "Gitar Listrik",
       "image_url":
@@ -14,6 +15,7 @@ class _CartViewState extends State<CartView> {
       "price": 2500000,
       "qty": 1,
     },
+    // index 1
     {
       "product_name": "Meja Belajar",
       "image_url":
@@ -21,6 +23,7 @@ class _CartViewState extends State<CartView> {
       "price": 175000,
       "qty": 1,
     },
+    // index 2
     {
       "product_name": "PC Gaming",
       "image_url":
@@ -28,6 +31,7 @@ class _CartViewState extends State<CartView> {
       "price": 16500000,
       "qty": 1,
     },
+    // index 3
     {
       "product_name": "Lampu Aladin",
       "image_url":
@@ -36,6 +40,15 @@ class _CartViewState extends State<CartView> {
       "qty": 1,
     },
   ];
+
+  void deleteItem(itemIndex) {
+    cartItems.removeAt(itemIndex);
+    setState(() {});
+  }
+
+  //deleteItem(1);
+  //deleteItem(3);
+  //deleteItem(0);
 
   @override
   Widget build(BuildContext context) {
@@ -90,12 +103,53 @@ class _CartViewState extends State<CartView> {
                 child: ListView.builder(
                   itemCount: cartItems.length,
                   itemBuilder: (context, index) {
+                    // 0
+                    // 1
+                    // 2
+                    // 3
+
+                    //var nama_varoabel =  namaList[index];
+                    var item = cartItems[index];
+
+                    // var prod = cartItems[2];
+                    // print(prod["product_name"])
+                    // print(prod["price"])
+
                     return Container(
                       height: 100.0,
                       margin: EdgeInsets.only(bottom: 10),
                       decoration: BoxDecoration(
-                          color: Colors.orange[100],
-                          borderRadius: BorderRadius.circular(20.0)),
+                        color: Colors.orange[100],
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                      child: Row(
+                        children: [
+                          Image.network(
+                            item["image_url"],
+                            width: 80.0,
+                            height: 80.0,
+                            fit: BoxFit.fill,
+                          ),
+                          Text("${item["product_name"]}"),
+                          Text("${item["price"]}"),
+                          Spacer(),
+                          InkWell(
+                            onTap: () {
+                              deleteItem(index);
+                            },
+                            child: Text(
+                              "Delete",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.red,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 10.0,
+                          ),
+                        ],
+                      ),
                     );
                   },
                 ),
