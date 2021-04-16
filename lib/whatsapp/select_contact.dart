@@ -127,37 +127,6 @@ class _SelectContactViewState extends State<SelectContactView> {
       ),
       body: Column(
         children: [
-          Container(
-            color: Colors.yellow,
-            child: Column(
-              children: [
-                Container(
-                  padding: EdgeInsets.all(20.0),
-                  child: Row(
-                    children: [
-                      CircleAvatar(),
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      Text("New Group"),
-                    ],
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.all(20.0),
-                  child: Row(
-                    children: [
-                      CircleAvatar(),
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      Text("New Contact"),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
           Expanded(
             child: Container(
               color: Colors.blue[100],
@@ -166,17 +135,53 @@ class _SelectContactViewState extends State<SelectContactView> {
                 itemBuilder: (context, index) {
                   Map item = cartItems[index];
 
-                  return Container(
-                    padding: EdgeInsets.all(20.0),
-                    child: Row(
-                      children: [
-                        CircleAvatar(),
-                        SizedBox(
-                          width: 10.0,
+                  return Column(
+                    children: [
+                      if (index == 0)
+                        Container(
+                          color: Colors.yellow,
+                          child: Column(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.all(20.0),
+                                child: Row(
+                                  children: [
+                                    CircleAvatar(),
+                                    SizedBox(
+                                      width: 10.0,
+                                    ),
+                                    Text("New Group"),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                padding: EdgeInsets.all(20.0),
+                                child: Row(
+                                  children: [
+                                    CircleAvatar(),
+                                    SizedBox(
+                                      width: 10.0,
+                                    ),
+                                    Text("New Contact"),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                        Text("${item["product_name"]}"),
-                      ],
-                    ),
+                      Container(
+                        padding: EdgeInsets.all(20.0),
+                        child: Row(
+                          children: [
+                            CircleAvatar(),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            Text("${item["product_name"]}"),
+                          ],
+                        ),
+                      ),
+                    ],
                   );
                 },
               ),

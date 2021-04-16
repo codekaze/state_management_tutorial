@@ -6,6 +6,9 @@ class FunctionView extends StatefulWidget {
 }
 
 class _FunctionViewState extends State<FunctionView> {
+  String nama;
+  String alamat;
+
   int pangkatkan3(int angka) {
     return angka * angka * angka;
   }
@@ -16,6 +19,9 @@ class _FunctionViewState extends State<FunctionView> {
     return hargaSetelahDiskon;
   }
 
+  hitungUlang() {}
+
+  test(Function functionLain) {}
 
   //API
   //username+password , token
