@@ -39,6 +39,7 @@ class _FunctionViewState extends State<FunctionView> {
     var hargaProduk = 80000;
     var hargaSetelahDiskon = diskonProduk(hargaProduk);
 
+    var test = 2;
     return Scaffold(
       appBar: AppBar(
         title: Text("Function View"),
