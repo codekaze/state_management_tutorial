@@ -97,18 +97,62 @@ class _Looping1ViewState extends State<Looping1View> {
                   },
                 ];
 
-                for (var i = 0; i < products.length; i++) {
-                  var product = products[i];
+                // for (var i = 0; i < products.length; i++) {
+                //   var product = products[i];
 
-                  var productName = product["product_name"];
-                  var price = product["price"];
+                //   var productName = product["product_name"];
+                //   var price = product["price"];
 
-                  if (price > 20000) {
-                    print(product);
+                //   if (price > 20000) {
+                //     print(product);
+                //   }
+                // }
+
+                //!
+                // products.forEach((product) {
+                //   print(product);
+                //   print(product["price"]);
+                // });
+
+                // int i = 0;
+                // while (i < 10) {
+                //   print(i);
+                //   i++;
+                // }
+                // print("----------");
+
+                // int i = 0;
+                // do {
+                //   print(i);
+                //   i++;
+                // } while (i < 10);
+
+                /*
+                  break
+                  continue
+                */
+
+                // for (var i = 0; i < 10; i++) {
+                //   if (i >= 4) {
+                //     break;
+                //   }
+                //   print(i);
+                // }
+
+                for (var i = 0; i < 10; i++) {
+                  if (i == 4) {
+                    continue;
                   }
+                  print(i);
                 }
 
-                print("----------");
+                print("---");
+
+                for (var i = 0; i < 10; i++) {
+                  if (i != 4) {
+                    print(i);
+                  }
+                }
               },
               child: Card(
                 color: Colors.blue[200],
