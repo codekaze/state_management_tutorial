@@ -59,6 +59,7 @@ class _SelectContactViewState extends State<SelectContactView> {
           "https://statics.indozone.news/content/2020/11/21/vWsB5Lk/apes-dokter-ini-tertipu-rp1-3-miliar-usai-beli-lampu-aladdin-palsu30_700.jpg",
       "price": 75000000,
       "qty": 50,
+      // "status": "read",
     },
     {
       "product_name": "Lampu Aladin",
@@ -66,6 +67,9 @@ class _SelectContactViewState extends State<SelectContactView> {
           "https://statics.indozone.news/content/2020/11/21/vWsB5Lk/apes-dokter-ini-tertipu-rp1-3-miliar-usai-beli-lampu-aladdin-palsu30_700.jpg",
       "price": 75000000,
       "qty": 1,
+      // "status": "read",
+      // "read": true,
+      // "read": 1,
     },
     {
       "product_name": "Lampu Aladin",
