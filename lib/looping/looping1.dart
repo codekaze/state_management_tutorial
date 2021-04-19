@@ -139,20 +139,21 @@ class _Looping1ViewState extends State<Looping1View> {
                 //   print(i);
                 // }
 
-                for (var i = 0; i < 10; i++) {
-                  if (i == 4) {
-                    continue;
-                  }
-                  print(i);
-                }
+                // for (var i = 0; i < 10; i++) {
+                //   if (i == 4) {
+                //     continue;
+                //   }
+                //   print(i);
+                // }
 
-                print("---");
+                // print("---");
 
                 for (var i = 0; i < 10; i++) {
                   if (i != 4) {
                     print(i);
                   }
                 }
+                
               },
               child: Card(
                 color: Colors.blue[200],
