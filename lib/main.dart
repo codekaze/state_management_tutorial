@@ -14,6 +14,6 @@ void main() {
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
     defaultTransition: Transition.fade,
-    home: PoepleListView(),
+    home: SelectContactView(),
   ));
 }

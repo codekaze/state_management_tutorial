@@ -21,7 +21,7 @@ class _SelectContactViewState extends State<SelectContactView> {
       "image_url":
           "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//94/MTA-4475640/dekoruma_dekoruma_-_heim_studio_yucca_set_meja_belajar_dengan_laci_penyimpanan_full06_t54t1ff7.jpg",
       "price": 175000,
-      "qty": 1,
+      "qty": 20,
     },
     // index 2
     {
@@ -29,7 +29,7 @@ class _SelectContactViewState extends State<SelectContactView> {
       "image_url":
           "https://merahputih.com/media/f0/86/1d/f0861dd0ce71c639c582dcdcfef4b95b.jpg",
       "price": 16500000,
-      "qty": 1,
+      "qty": 10,
     },
     // index 3
     {
@@ -37,7 +37,14 @@ class _SelectContactViewState extends State<SelectContactView> {
       "image_url":
           "https://statics.indozone.news/content/2020/11/21/vWsB5Lk/apes-dokter-ini-tertipu-rp1-3-miliar-usai-beli-lampu-aladdin-palsu30_700.jpg",
       "price": 75000000,
-      "qty": 1,
+      "qty": 30,
+    },
+    {
+      "product_name": "Lampu Aladin",
+      "image_url":
+          "https://statics.indozone.news/content/2020/11/21/vWsB5Lk/apes-dokter-ini-tertipu-rp1-3-miliar-usai-beli-lampu-aladdin-palsu30_700.jpg",
+      "price": 75000000,
+      "qty": 40,
     },
     {
       "product_name": "Lampu Aladin",
@@ -51,14 +58,7 @@ class _SelectContactViewState extends State<SelectContactView> {
       "image_url":
           "https://statics.indozone.news/content/2020/11/21/vWsB5Lk/apes-dokter-ini-tertipu-rp1-3-miliar-usai-beli-lampu-aladdin-palsu30_700.jpg",
       "price": 75000000,
-      "qty": 1,
-    },
-    {
-      "product_name": "Lampu Aladin",
-      "image_url":
-          "https://statics.indozone.news/content/2020/11/21/vWsB5Lk/apes-dokter-ini-tertipu-rp1-3-miliar-usai-beli-lampu-aladdin-palsu30_700.jpg",
-      "price": 75000000,
-      "qty": 1,
+      "qty": 50,
     },
     {
       "product_name": "Lampu Aladin",
@@ -90,6 +90,28 @@ class _SelectContactViewState extends State<SelectContactView> {
       "qty": 1,
     },
   ];
+
+  getIconByQty(int qty) {
+    if (qty < 10) {
+      return Icon(
+        Icons.dangerous,
+        color: Colors.red,
+      );
+    } else {
+      return Icon(
+        Icons.check,
+        color: Colors.green,
+      );
+    }
+  }
+
+  getIconByStatus(String status) {
+    if (status == "read") {
+      return Icon(Icons.check);
+    } else {
+      return Icon(Icons.mark_as_unread);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -173,11 +195,26 @@ class _SelectContactViewState extends State<SelectContactView> {
                         padding: EdgeInsets.all(20.0),
                         child: Row(
                           children: [
-                            CircleAvatar(),
+                            CircleAvatar(
+                              backgroundColor: Colors.white,
+                              child: FlutterLogo(),
+                            ),
                             SizedBox(
                               width: 10.0,
                             ),
-                            Text("${item["product_name"]}"),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "${item["product_name"]}",
+                                ),
+                                Text(
+                                  "Stock: ${item["qty"]}",
+                                ),
+                                getIconByQty(item["qty"]),
+                              ],
+                            ),
                           ],
                         ),
                       ),
