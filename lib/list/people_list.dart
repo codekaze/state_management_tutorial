@@ -46,12 +46,16 @@ class _PoepleListViewState extends State<PoepleListView> {
                 var item = items[index];
 
                 return Card(
-                  child: Column(
-                    children: [
-                      Text("ID : ${item["id"]}"),
-                      Text("Name : ${item["name"]}"),
-                      Text("Email : ${item["email"]}"),
-                    ],
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("ID : ${item["id"]}"),
+                        Text("Name : ${item["name"]}"),
+                        Text("Email : ${item["email"]}"),
+                      ],
+                    ),
                   ),
                 );
               },
